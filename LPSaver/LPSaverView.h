@@ -12,6 +12,8 @@
 
 @interface LPSaverView : ScreenSaverView{
 	QCCompositionLayer * qcComp;
+	IBOutlet id configSheet;
+	IBOutlet NSSlider* speedSlider;
 
 }
 

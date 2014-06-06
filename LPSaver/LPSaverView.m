@@ -8,6 +8,7 @@
 
 #import "LPSaverView.h"
 
+static NSString * const MyModuleName = @"net.localProjects.LPSaver";
 static BOOL mounted = false;
 
 @implementation LPSaverView
@@ -16,6 +17,9 @@ static BOOL mounted = false;
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
+
+		ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+	    [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:2.0], @"speed",  nil]];
 
 		[self setAnimationTimeInterval:1/60.0];
 		[self setWantsLayer:YES];
@@ -56,6 +60,7 @@ static BOOL mounted = false;
 }
 
 -(void)mount{
+
 	NSString * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"mountVault" ofType:@"scpt"];
 	//NSLog(@"scriptPath: %@", scriptPath);
 	NSArray * args = [NSArray arrayWithObjects: scriptPath, nil];
@@ -65,9 +70,13 @@ static BOOL mounted = false;
 	mounted = true;
 }
 
-- (void)startAnimation
-{
+- (void)startAnimation{
+
     [super startAnimation];
+	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+	NSLog(@"staring with speed %f", [defaults floatForKey:@"speed"]);
+
+	[qcComp setValue:[NSNumber numberWithFloat:[defaults floatForKey:@"speed"]] forKeyPath:@"Speed"];
 }
 
 - (void)stopAnimation
@@ -85,14 +94,36 @@ static BOOL mounted = false;
 	return;
 }
 
-- (BOOL)hasConfigureSheet
-{
-    return NO;
+- (BOOL)hasConfigureSheet{
+	return YES;
 }
 
-- (NSWindow*)configureSheet
-{
-    return nil;
+- (NSWindow*)configureSheet{
+	
+	ScreenSaverDefaults *defaults;
+
+	defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+
+	if (!configSheet){
+		if (![NSBundle loadNibNamed:@"ConfigureSheet" owner:self]){
+			NSLog( @"Failed to load configure sheet." );
+			NSBeep();
+		}
+	}
+
+	[speedSlider setFloatValue:[defaults floatForKey:@"speed"]];
+
+	return configSheet;
 }
+
+- (IBAction)okClick:(id)sender{
+
+	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:MyModuleName];
+	// Update our defaults
+	[defaults setFloat:[speedSlider floatValue] forKey:@"speed"];
+	[defaults synchronize];
+	[[NSApplication sharedApplication] endSheet:configSheet];
+}
+
 
 @end
