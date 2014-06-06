@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBFE6AC619101EE900BD6984 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFE6AC519101EE900BD6984 /* Cocoa.framework */; };
+		BBFE6AC819101EE900BD6984 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFE6AC719101EE900BD6984 /* ScreenSaver.framework */; };
+		BBFE6AD219101EE900BD6984 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBFE6AD019101EE900BD6984 /* InfoPlist.strings */; };
+		BBFE6AD619101EE900BD6984 /* LPSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFE6AD519101EE900BD6984 /* LPSaverView.m */; };
+		BBFE6ADD1910201800BD6984 /* saver.qtz in Resources */ = {isa = PBXBuildFile; fileRef = BBFE6ADC1910201800BD6984 /* saver.qtz */; };
+		BBFE6AE01910240F00BD6984 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFE6ADE1910240F00BD6984 /* Quartz.framework */; };
+		BBFE6AE11910240F00BD6984 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFE6ADF1910240F00BD6984 /* QuartzCore.framework */; };
+		BBFE6AE31910265D00BD6984 /* mountVault.scpt in Resources */ = {isa = PBXBuildFile; fileRef = BBFE6AE21910265D00BD6984 /* mountVault.scpt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BBFE6AC219101EE900BD6984 /* LPSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBFE6AC519101EE900BD6984 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BBFE6AC719101EE900BD6984 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
+		BBFE6ACA19101EE900BD6984 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BBFE6ACB19101EE900BD6984 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BBFE6ACC19101EE900BD6984 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BBFE6ACF19101EE900BD6984 /* LPSaver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LPSaver-Info.plist"; sourceTree = "<group>"; };
+		BBFE6AD119101EE900BD6984 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BBFE6AD319101EE900BD6984 /* LPSaver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LPSaver-Prefix.pch"; sourceTree = "<group>"; };
+		BBFE6AD419101EE900BD6984 /* LPSaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LPSaverView.h; sourceTree = "<group>"; };
+		BBFE6AD519101EE900BD6984 /* LPSaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPSaverView.m; sourceTree = "<group>"; };
+		BBFE6ADC1910201800BD6984 /* saver.qtz */ = {isa = PBXFileReference; lastKnownFileType = "video.quartz-composer"; path = saver.qtz; sourceTree = "<group>"; };
+		BBFE6ADE1910240F00BD6984 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		BBFE6ADF1910240F00BD6984 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BBFE6AE21910265D00BD6984 /* mountVault.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = mountVault.scpt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBFE6ABD19101EE900BD6984 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFE6AE01910240F00BD6984 /* Quartz.framework in Frameworks */,
+				BBFE6AE11910240F00BD6984 /* QuartzCore.framework in Frameworks */,
+				BBFE6AC819101EE900BD6984 /* ScreenSaver.framework in Frameworks */,
+				BBFE6AC619101EE900BD6984 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBFE6AB719101EE900BD6984 = {
+			isa = PBXGroup;
+			children = (
+				BBFE6ACD19101EE900BD6984 /* LPSaver */,
+				BBFE6AC419101EE900BD6984 /* Frameworks */,
+				BBFE6AC319101EE900BD6984 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBFE6AC319101EE900BD6984 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE6AC219101EE900BD6984 /* LPSaver.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBFE6AC419101EE900BD6984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE6ADE1910240F00BD6984 /* Quartz.framework */,
+				BBFE6ADF1910240F00BD6984 /* QuartzCore.framework */,
+				BBFE6AC519101EE900BD6984 /* Cocoa.framework */,
+				BBFE6AC719101EE900BD6984 /* ScreenSaver.framework */,
+				BBFE6AC919101EE900BD6984 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBFE6AC919101EE900BD6984 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE6ACA19101EE900BD6984 /* AppKit.framework */,
+				BBFE6ACB19101EE900BD6984 /* CoreData.framework */,
+				BBFE6ACC19101EE900BD6984 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BBFE6ACD19101EE900BD6984 /* LPSaver */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE6AD419101EE900BD6984 /* LPSaverView.h */,
+				BBFE6AD519101EE900BD6984 /* LPSaverView.m */,
+				BBFE6ACE19101EE900BD6984 /* Supporting Files */,
+			);
+			path = LPSaver;
+			sourceTree = "<group>";
+		};
+		BBFE6ACE19101EE900BD6984 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE6AE21910265D00BD6984 /* mountVault.scpt */,
+				BBFE6ADC1910201800BD6984 /* saver.qtz */,
+				BBFE6ACF19101EE900BD6984 /* LPSaver-Info.plist */,
+				BBFE6AD019101EE900BD6984 /* InfoPlist.strings */,
+				BBFE6AD319101EE900BD6984 /* LPSaver-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BBFE6ABE19101EE900BD6984 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BBFE6AC119101EE900BD6984 /* LPSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFE6AD919101EE900BD6984 /* Build configuration list for PBXNativeTarget "LPSaver" */;
+			buildPhases = (
+				BBFE6ABC19101EE900BD6984 /* Sources */,
+				BBFE6ABD19101EE900BD6984 /* Frameworks */,
+				BBFE6ABE19101EE900BD6984 /* Headers */,
+				BBFE6ABF19101EE900BD6984 /* Resources */,
+				BBFE6AC019101EE900BD6984 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LPSaver;
+			productName = LPSaver;
+			productReference = BBFE6AC219101EE900BD6984 /* LPSaver.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBFE6AB819101EE900BD6984 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Oriol Ferrer Mesià";
+			};
+			buildConfigurationList = BBFE6ABB19101EE900BD6984 /* Build configuration list for PBXProject "LPSaver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BBFE6AB719101EE900BD6984;
+			productRefGroup = BBFE6AC319101EE900BD6984 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBFE6AC119101EE900BD6984 /* LPSaver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBFE6ABF19101EE900BD6984 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFE6AD219101EE900BD6984 /* InfoPlist.strings in Resources */,
+				BBFE6AE31910265D00BD6984 /* mountVault.scpt in Resources */,
+				BBFE6ADD1910201800BD6984 /* saver.qtz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		BBFE6AC019101EE900BD6984 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBFE6ABC19101EE900BD6984 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFE6AD619101EE900BD6984 /* LPSaverView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BBFE6AD019101EE900BD6984 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBFE6AD119101EE900BD6984 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBFE6AD719101EE900BD6984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BBFE6AD819101EE900BD6984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BBFE6ADA19101EE900BD6984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LPSaver/LPSaver-Prefix.pch";
+				INFOPLIST_FILE = "LPSaver/LPSaver-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		BBFE6ADB19101EE900BD6984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LPSaver/LPSaver-Prefix.pch";
+				INFOPLIST_FILE = "LPSaver/LPSaver-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBFE6ABB19101EE900BD6984 /* Build configuration list for PBXProject "LPSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFE6AD719101EE900BD6984 /* Debug */,
+				BBFE6AD819101EE900BD6984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFE6AD919101EE900BD6984 /* Build configuration list for PBXNativeTarget "LPSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFE6ADA19101EE900BD6984 /* Debug */,
+				BBFE6ADB19101EE900BD6984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBFE6AB819101EE900BD6984 /* Project object */;
+}
