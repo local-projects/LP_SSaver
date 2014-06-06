@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface LPSaverView : ScreenSaverView{
-	QCCompositionLayer * cameraView;
+	QCCompositionLayer * qcComp;
 }
 
 @end

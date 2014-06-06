@@ -19,22 +19,22 @@
 		[self setWantsLayer:YES];
 
 		NSString * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"mountVault" ofType:@"scpt"];
-		NSLog(@"scriptPath: %@", scriptPath);
+		//NSLog(@"scriptPath: %@", scriptPath);
 		NSArray * args = [NSArray arrayWithObjects: scriptPath, nil];
 		NSTask * task = [NSTask launchedTaskWithLaunchPath: @"/usr/bin/osascript" arguments: args];
 		[task waitUntilExit];
 		[task terminate];
 
 		NSString * compPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"saver" ofType:@"qtz"];
-		NSLog(@"CompPath: %@", compPath);
+		//NSLog(@"CompPath: %@", compPath);
 
 		frame.origin.x = frame.origin.y = 0.0f;
 
-		NSLog(@"frame: %@", NSStringFromRect(frame));
-		cameraView = [QCCompositionLayer compositionLayerWithFile:compPath];
-		cameraView.frame = NSRectToCGRect(frame);
-		cameraView.opacity = 1.0;
-		[[self layer] addSublayer: cameraView];
+		//NSLog(@"frame: %@", NSStringFromRect(frame));
+		qcComp = [QCCompositionLayer compositionLayerWithFile:compPath];
+		qcComp.frame = NSRectToCGRect(frame);
+		qcComp.opacity = 1.0;
+		[[self layer] addSublayer: qcComp];
 
     }
     return self;
