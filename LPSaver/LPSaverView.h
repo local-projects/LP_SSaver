@@ -12,6 +12,9 @@
 
 @interface LPSaverView : ScreenSaverView{
 	QCCompositionLayer * qcComp;
+
 }
+
+-(void)mount;
 
 @end

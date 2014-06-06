@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBD6E5BD1942240F00B55A85 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = BBD6E5BC1942240F00B55A85 /* thumbnail.png */; };
 		BBFE6AC619101EE900BD6984 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFE6AC519101EE900BD6984 /* Cocoa.framework */; };
 		BBFE6AC819101EE900BD6984 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFE6AC719101EE900BD6984 /* ScreenSaver.framework */; };
 		BBFE6AD219101EE900BD6984 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBFE6AD019101EE900BD6984 /* InfoPlist.strings */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BBD6E5BC1942240F00B55A85 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		BBFE6AC219101EE900BD6984 /* LPSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFE6AC519101EE900BD6984 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BBFE6AC719101EE900BD6984 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 		BBFE6ACE19101EE900BD6984 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BBD6E5BC1942240F00B55A85 /* thumbnail.png */,
 				BBFE6AE21910265D00BD6984 /* mountVault.scpt */,
 				BBFE6ADC1910201800BD6984 /* saver.qtz */,
 				BBFE6ACF19101EE900BD6984 /* LPSaver-Info.plist */,
@@ -174,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD6E5BD1942240F00B55A85 /* thumbnail.png in Resources */,
 				BBFE6AD219101EE900BD6984 /* InfoPlist.strings in Resources */,
 				BBFE6AE31910265D00BD6984 /* mountVault.scpt in Resources */,
 				BBFE6ADD1910201800BD6984 /* saver.qtz in Resources */,
@@ -296,7 +300,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -312,7 +316,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;

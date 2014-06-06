@@ -8,6 +8,8 @@
 
 #import "LPSaverView.h"
 
+static BOOL mounted = false;
+
 @implementation LPSaverView
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
@@ -18,26 +20,49 @@
 		[self setAnimationTimeInterval:1/60.0];
 		[self setWantsLayer:YES];
 
-		NSString * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"mountVault" ofType:@"scpt"];
-		//NSLog(@"scriptPath: %@", scriptPath);
-		NSArray * args = [NSArray arrayWithObjects: scriptPath, nil];
-		NSTask * task = [NSTask launchedTaskWithLaunchPath: @"/usr/bin/osascript" arguments: args];
-		[task waitUntilExit];
-		[task terminate];
+		CALayer *bgLayer = [CALayer layer];
+		bgLayer.backgroundColor = [[NSColor whiteColor] CGColor];
+		frame.origin.x = frame.origin.y = 0.0f;
+		bgLayer.frame = frame;
+		[[self layer] addSublayer:bgLayer];
+		[self setNeedsDisplay:true];
+
+		CABasicAnimation* fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+		fadeAnimation.toValue = (id)[NSNumber numberWithFloat:0.0];
+		fadeAnimation.removedOnCompletion = NO;
+		fadeAnimation.duration = 2.5;
+		fadeAnimation.fillMode = kCAFillModeForwards;
+		[bgLayer addAnimation:fadeAnimation forKey:@"selectionAnimation"];
+
+		if(!mounted){
+			[NSThread detachNewThreadSelector:@selector(mount) toTarget:self withObject:nil];
+		}
+
+		while(!mounted){
+			[NSThread sleepForTimeInterval:0.01];
+		}
 
 		NSString * compPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"saver" ofType:@"qtz"];
 		//NSLog(@"CompPath: %@", compPath);
 
-		frame.origin.x = frame.origin.y = 0.0f;
 
 		//NSLog(@"frame: %@", NSStringFromRect(frame));
 		qcComp = [QCCompositionLayer compositionLayerWithFile:compPath];
 		qcComp.frame = NSRectToCGRect(frame);
 		qcComp.opacity = 1.0;
-		[[self layer] addSublayer: qcComp];
-
+		[[self layer] insertSublayer: qcComp below:bgLayer];
     }
     return self;
+}
+
+-(void)mount{
+	NSString * scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"mountVault" ofType:@"scpt"];
+	//NSLog(@"scriptPath: %@", scriptPath);
+	NSArray * args = [NSArray arrayWithObjects: scriptPath, nil];
+	NSTask * task = [NSTask launchedTaskWithLaunchPath: @"/usr/bin/osascript" arguments: args];
+	[task waitUntilExit];
+	[task terminate];
+	mounted = true;
 }
 
 - (void)startAnimation
@@ -57,7 +82,7 @@
 
 - (void)animateOneFrame
 {
-    return;
+	return;
 }
 
 - (BOOL)hasConfigureSheet
